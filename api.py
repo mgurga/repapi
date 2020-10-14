@@ -8,17 +8,17 @@ with open("data.json", "r") as f:
 
 class RepAPI:
 
-	@cherrypy.tools.accept(media='application/json')
-
 	@cherrypy.expose
+	@cherrypy.tools.json_out()
 	def index(self):
-		return json.dumps(repdata)
+		return repdata
 	
 	@cherrypy.expose
+	@cherrypy.tools.json_out()
 	def state(self, state):
 		if state not in repdata:
 			return "state does not exist"
 		else:
-			return json.dumps(repdata[state]["districts"])
+			return repdata[state]["districts"]
 
 cherrypy.quickstart(RepAPI())
