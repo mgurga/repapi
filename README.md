@@ -30,7 +30,7 @@ All the API endpoints return JSON
 ## How to compile data and host
 You must have python3 and pip3 installed to compile the data
 ```
-git clone https://github.com/rokie95/repapi
+git clone https://github.com/mgurga/repapi
 cd repapi
 pip3 install -r requirements.txt
 python3 extractor.py
